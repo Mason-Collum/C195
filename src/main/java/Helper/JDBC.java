@@ -2,6 +2,7 @@ package Helper;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public abstract class JDBC {
     private static final String protocol = "jdbc";
@@ -23,8 +24,13 @@ public abstract class JDBC {
         }
         catch(Exception e)
         {
-            System.out.println("Error:" + e.getMessage());
+            //System.out.println("Error:" + e.getMessage());
+            e.printStackTrace();
         }
+    }
+
+    public static Connection getConnection(){
+        return connection;
     }
 
     public static void closeConnection() {

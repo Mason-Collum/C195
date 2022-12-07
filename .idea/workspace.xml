@@ -4,36 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c6d4047-253c-464d-bf14-ff888bd7953a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-java-8.0.25.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Helper/JDBC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/c195/AddAppointmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/c195/AddCustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/c195/AppointmentsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/c195/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/c195/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/c195/MainScreenController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/c195/ModifyAppointmentsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/c195/ModifyCustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/c195/AddAppointment.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/c195/AddCustomer.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/c195/Appointments.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/c195/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/c195/MainScreen.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/c195/Modify Appointments.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/c195/ModifyCustomer.fxml" afterDir="false" />
+    <list default="true" id="2c6d4047-253c-464d-bf14-ff888bd7953a" name="Changes" comment="second commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/c195/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/c195/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Helper/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Helper/JDBC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +48,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "C:/Users/edwly/IdeaProjects/C195/src/main/java/com/example/c195",
-    "last_opened_file_path": "C:/Users/edwly/Downloads/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar",
+    "last_opened_file_path": "C:/Users/edwly/IdeaProjects/C482PA",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -97,6 +72,14 @@
       <option name="presentableId" value="Default" />
       <updated>1669842832954</updated>
     </task>
+    <task id="LOCAL-00001" summary="second commit">
+      <created>1670449120129</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670449120129</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,5 +95,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
   </component>
 </project>

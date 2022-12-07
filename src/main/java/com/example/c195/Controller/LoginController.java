@@ -1,4 +1,4 @@
-package com.example.c195;
+package com.example.c195.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
