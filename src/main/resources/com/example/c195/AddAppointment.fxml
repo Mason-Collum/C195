@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="610.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.AddAppointmentController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Add Appointment">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="63.0" text="Appointment ID" />
+      <Label layoutX="53.0" layoutY="99.0" text="Title" />
+      <Label layoutX="34.0" layoutY="139.0" text="Description" />
+      <Label layoutX="42.0" layoutY="179.0" text="Location" />
+      <Label layoutX="38.0" layoutY="220.0" text="Contact" />
+      <Label layoutX="23.0" layoutY="255.0" text="Start Date/Time" />
+      <Label layoutX="24.0" layoutY="296.0" text="End Date/Time" />
+      <Label layoutX="31.0" layoutY="341.0" text="Customer ID" />
+      <Label layoutX="44.0" layoutY="387.0" text="User ID" />
+      <TextField fx:id="AddAppID" editable="false" layoutX="151.0" layoutY="59.0" promptText="Appointment ID (Auto gen)" />
+      <TextField fx:id="AddTitle" layoutX="152.0" layoutY="95.0" promptText="Title" />
+      <TextField fx:id="AddDes" layoutX="152.0" layoutY="135.0" promptText="Description" />
+      <TextField fx:id="AddLocation" layoutX="152.0" layoutY="175.0" promptText="Location" />
+      <TextField fx:id="AddContact" layoutX="152.0" layoutY="216.0" promptText="Contact" />
+      <TextField fx:id="AddStart" layoutX="152.0" layoutY="251.0" promptText="Start Date/Time" />
+      <TextField fx:id="AddEnd" layoutX="151.0" layoutY="292.0" promptText="End Date/Time" />
+      <TextField fx:id="AddCustID" layoutX="153.0" layoutY="337.0" promptText="Customer ID" />
+      <TextField fx:id="AddUserID" layoutX="152.0" layoutY="383.0" promptText="User ID" />
+      <Button layoutX="207.0" layoutY="505.0" mnemonicParsing="false" onAction="#OnSave" text="Save" />
+      <Button layoutX="403.0" layoutY="505.0" mnemonicParsing="false" onAction="#OnCancel" text="Cancel" />
+   </children>
+</AnchorPane>
