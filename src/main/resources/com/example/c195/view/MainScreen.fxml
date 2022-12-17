@@ -3,21 +3,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.Controller.MainScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.Controller.MainScreenController">
    <children>
-      <TableView fx:id="CustomerInfo" layoutX="14.0" layoutY="68.0" prefHeight="200.0" prefWidth="777.0">
+      <TableView fx:id="CustomerInfo" layoutX="14.0" layoutY="68.0" prefHeight="200.0" prefWidth="684.0">
         <columns>
           <TableColumn fx:id="CustomerID" prefWidth="75.0" text="Customer ID" />
           <TableColumn fx:id="CustomerName" prefWidth="96.20001220703125" text="Customer Name" />
             <TableColumn fx:id="CustomerAddress" prefWidth="182.4000244140625" text="Customer Address" />
             <TableColumn fx:id="FirstLevelDivison" prefWidth="116.4000244140625" text="First Level Divison" />
-            <TableColumn fx:id="Country" prefWidth="96.19998168945312" text="Country" />
             <TableColumn fx:id="PostalCode" prefWidth="74.39996337890625" text="Postal Code" />
             <TableColumn fx:id="Phone" prefWidth="134.4000244140625" text="Phone" />
         </columns>
       </TableView>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="132.0" text="Customer Records" />
-      <Button fx:id="ToAppointment" layoutX="684.0" layoutY="360.0" mnemonicParsing="false" onAction="#OnCustomerAppointments" text="To Customer Appointments" />
+      <Button fx:id="ToAppointment" layoutX="430.0" layoutY="360.0" mnemonicParsing="false" onAction="#OnCustomerAppointments" text="To Customer Appointments" />
       <Button fx:id="ToAddCustomer" layoutX="14.0" layoutY="295.0" mnemonicParsing="false" onAction="#OnAddCustomer" text="Add Customer" />
       <Button fx:id="ToModifyCustomer" layoutX="146.0" layoutY="295.0" mnemonicParsing="false" onAction="#OnModifyCustomer" text="Modify Customer" />
       <Button fx:id="DeleteCustomer" layoutX="306.0" layoutY="295.0" mnemonicParsing="false" onAction="#OnDeleteCustomer" text="Delete Customer" />

@@ -6,18 +6,18 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="943.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.Controller.AppointmentsController">
    <children>
-      <TableView layoutX="8.0" layoutY="79.0" prefHeight="200.0" prefWidth="932.0">
+      <TableView fx:id="AppointmentTable" layoutX="8.0" layoutY="79.0" prefHeight="200.0" prefWidth="932.0">
         <columns>
-          <TableColumn prefWidth="98.19997978210449" text="Appointment ID" />
-          <TableColumn prefWidth="78.79999542236328" text="Title" />
-            <TableColumn prefWidth="110.4000244140625" text="Description" />
-            <TableColumn prefWidth="122.20001220703125" text="Location" />
-            <TableColumn prefWidth="75.0" text="Contact" />
-            <TableColumn prefWidth="75.0" text="Type" />
-            <TableColumn prefWidth="116.0" text="Start Date/Time" />
-            <TableColumn prefWidth="106.199951171875" text="End Date/Time" />
-            <TableColumn prefWidth="75.0" text="Customer ID" />
-            <TableColumn prefWidth="75.0" text="UserID" />
+          <TableColumn fx:id="AppointmentID" prefWidth="98.19997978210449" text="Appointment ID" />
+          <TableColumn fx:id="Titlecolumn" prefWidth="78.79999542236328" text="Title" />
+            <TableColumn fx:id="DescriptionColumn" prefWidth="110.4000244140625" text="Description" />
+            <TableColumn fx:id="Locationcolumn" prefWidth="122.20001220703125" text="Location" />
+            <TableColumn fx:id="Contactcolumn" prefWidth="75.0" text="Contact" />
+            <TableColumn fx:id="TypeColumn" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="Startcolumn" prefWidth="116.0" text="Start Date/Time" />
+            <TableColumn fx:id="Endcolumn" prefWidth="106.199951171875" text="End Date/Time" />
+            <TableColumn fx:id="CustomerColumn" prefWidth="75.0" text="Customer ID" />
+            <TableColumn fx:id="Usercolumn" prefWidth="75.0" text="UserID" />
         </columns>
       </TableView>
       <Label layoutX="14.0" layoutY="14.0" text="Appointments">
