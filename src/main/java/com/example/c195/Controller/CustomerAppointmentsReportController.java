@@ -23,30 +23,26 @@ import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 public class CustomerAppointmentsReportController implements Initializable {
-    public Label totalNumber;
+
+    /** This text area displays the amount of each selected type and month appointments.
+     */
     public TextArea textArea;
+
+    /** This combo box holds all of the appointment types.*/
     public ComboBox <Appointments> TypeBox;
+
+    /** This combo box holds all of the months of the year.*/
     public ComboBox MonthBox;
 
-    ObservableList<Appointments> Typelist = FXCollections.observableArrayList();
-
-    ObservableList<Enum> MonthList = FXCollections.observableArrayList();
 
 
 
 
     public void onTypeSelect(ActionEvent actionEvent) {
 
-
-
-
-
     }
 
     public void onMonthSelect(ActionEvent actionEvent){
-
-
-
 
     }
 
@@ -94,6 +90,10 @@ public class CustomerAppointmentsReportController implements Initializable {
         stage.show();
     }
 
+    /** This method collects the information from the combo boxes, and then prints it to the text area.
+     *
+     * @param actionEvent
+     */
     public void onGetTotal(ActionEvent actionEvent) {
         if(MonthBox.getSelectionModel().getSelectedItem() != null && TypeBox.getSelectionModel().getSelectedItem().getType() != null){
             int total = (DBAppointments.sortByMonth(TypeBox.getSelectionModel().getSelectedItem().getType(), MonthBox.getSelectionModel().getSelectedItem().toString()));

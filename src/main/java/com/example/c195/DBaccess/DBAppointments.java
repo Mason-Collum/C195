@@ -154,6 +154,12 @@ public class DBAppointments {
         return rowsaffected;
     }
 
+    /** This function prevents any Key conflicts, by deleting any appointments associated with a customer ID.
+     *
+     * @param custid
+     * @return
+     * @throws SQLException
+     */
     public static int deleteFromCustomer(int custid) throws SQLException {
         String sql = "DELETE FROM appointments WHERE Customer_ID = ?";
         PreparedStatement ps = JDBC.connection.prepareStatement(sql);
@@ -162,6 +168,10 @@ public class DBAppointments {
         return rowsaffected;
     }
 
+    /** This method selects the appointments where contact ID = 1.
+     *
+     * @return
+     */
     public static ObservableList<Appointments> getContID1() {
         ObservableList<Appointments> id1 = FXCollections.observableArrayList();
         try {
@@ -203,6 +213,10 @@ public class DBAppointments {
         return id1;
     }
 
+    /** This method selects the appointments where contact ID = 2.
+     *
+     * @return
+     */
     public static ObservableList<Appointments> getContID2() {
         ObservableList<Appointments> id2 = FXCollections.observableArrayList();
         try {
@@ -244,6 +258,10 @@ public class DBAppointments {
         return id2;
     }
 
+    /**This method selects the appointments where contact ID = 3.
+     *
+     * @return
+     */
     public static ObservableList<Appointments> getContID3() {
         ObservableList<Appointments> id3 = FXCollections.observableArrayList();
         try {
@@ -327,6 +345,12 @@ public class DBAppointments {
         return custIDSort;
     }
 
+    /** This method organizes the database by month and type, and then counts the total.
+     *
+     * @param type
+     * @param month
+     * @return
+     */
     public static int sortByMonth(String type, String month) {
             int index = 1;
         try {

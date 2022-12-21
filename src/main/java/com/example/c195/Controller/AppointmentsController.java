@@ -165,6 +165,10 @@ public class AppointmentsController implements Initializable {
         }
     }
 
+    /** This method displays all appointments within the next month only.
+     *
+     * @param actionEvent
+     */
     public void onMonthSelected(ActionEvent actionEvent) {
         DBAppointments.getAllAppointments().clear();
 
@@ -186,7 +190,7 @@ public class AppointmentsController implements Initializable {
 
 
     /** This funtion corresponds to the Week Radio button.
-     * When this button is pressed, it organizes the
+     * When this button is pressed, it organizes the Table to display only appointments within the week.
      * @param actionEvent
      */
     public void onWeekSelected(ActionEvent actionEvent) {
