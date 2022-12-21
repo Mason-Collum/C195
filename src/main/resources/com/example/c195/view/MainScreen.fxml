@@ -20,5 +20,8 @@
       <Button fx:id="ToAddCustomer" layoutX="14.0" layoutY="295.0" mnemonicParsing="false" onAction="#OnAddCustomer" text="Add Customer" />
       <Button fx:id="ToModifyCustomer" layoutX="146.0" layoutY="295.0" mnemonicParsing="false" onAction="#OnModifyCustomer" text="Modify Customer" />
       <Button fx:id="DeleteCustomer" layoutX="306.0" layoutY="295.0" mnemonicParsing="false" onAction="#OnDeleteCustomer" text="Delete Customer" />
+      <Button layoutX="161.0" layoutY="360.0" mnemonicParsing="false" onAction="#onReport2" text="To Report 2" />
+      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#onReport1" text="To Report 1" />
+      <Button layoutX="306.0" layoutY="360.0" mnemonicParsing="false" onAction="#onReport3" text="To Report 3" />
    </children>
 </AnchorPane>

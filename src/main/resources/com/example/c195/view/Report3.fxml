@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="613.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.Controller.Report3Controller">
+   <children>
+      <TableView fx:id="infoTable" layoutX="14.0" layoutY="178.0" prefHeight="200.0" prefWidth="770.0">
+        <columns>
+          <TableColumn fx:id="appID" prefWidth="98.19999504089355" text="Appointment ID" />
+          <TableColumn fx:id="title" prefWidth="65.79999542236328" text="Title" />
+            <TableColumn fx:id="description" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="location" prefWidth="75.0" text="Location" />
+            <TableColumn fx:id="type" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="start" prefWidth="75.0" text="Start" />
+            <TableColumn fx:id="end" prefWidth="81.20001220703125" text="End" />
+            <TableColumn fx:id="customerID" prefWidth="83.5999755859375" text="CustomerID" />
+            <TableColumn fx:id="userID" prefWidth="67.60003662109375" text="User ID" />
+            <TableColumn fx:id="contactID" prefWidth="69.20001220703125" text="Contact ID" />
+        </columns>
+      </TableView>
+      <TextField fx:id="idField" layoutX="129.0" layoutY="27.0" />
+      <Label layoutX="14.0" layoutY="31.0" text="Enter Customer ID" />
+      <Button layoutX="373.0" layoutY="27.0" mnemonicParsing="false" onAction="#onSubmit" text="Button" />
+      <Button layoutX="204.0" layoutY="426.0" mnemonicParsing="false" onAction="#toMainScreen" text="Button" />
+   </children>
+</AnchorPane>

@@ -12,8 +12,13 @@ import java.sql.SQLException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/** This class handles all of the interaction between the user table in the database and the program.*/
 public class DBuser {
 
+    /** This table grabs all users, and puts the information into an observable list.
+     *
+     * @return
+     */
     public static ObservableList<User> getAllUsers(){
 
         ObservableList<User> Ulist = FXCollections.observableArrayList();
@@ -39,6 +44,12 @@ public class DBuser {
         return Ulist;
     }
 
+    /** This function checks to see whether entered username and password are correct compared to the database.
+     * If these are incorrect, it throws an error. This error detects the local language, and adjusts accordingly.l
+     * @param username
+     * @param password
+     * @return
+     */
     public static Boolean verifyLogin(String username, String password){
         String sql = "SELECT * FROM users WHERE User_Name = '" + username + "' AND Password = '" + password + "'";
         try{

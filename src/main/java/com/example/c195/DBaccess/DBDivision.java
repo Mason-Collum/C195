@@ -10,7 +10,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/** This class handles all of the interaction between the first_level_divisions table in the database and the program.*/
 public class DBDivision {
+
+    /** This function grabs all of the divisions and puts them into an observable list.
+     *
+     * @return
+     */
     public static ObservableList<Division> getAllDivisions() {
 
         ObservableList<Division> Dlist = FXCollections.observableArrayList();
@@ -37,46 +43,10 @@ public class DBDivision {
         return Dlist;
     }
 
-
-    public static ObservableList<Division> GetSortedDivision(Country country) {
-
-        ObservableList<Division> fdlist = FXCollections.observableArrayList();
-        for (Division list : getAllDivisions()) {
-            if (list.getCountryid() == country.getCountryid()) {
-                fdlist.add(list);
-            }
-            return fdlist;
-        }
-       /* Country co = DBCountry.GetCountryID(country);
-        ObservableList<Division> dlist = FXCollections.observableArrayList();
-
-        String sql = "SELECT * FROM first_level_divisions WHERE Country_ID = ?";
-        try {
-
-
-            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
-            ps.setInt(1, co.getCountryid());
-
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                int divisionid = rs.getInt("Division_ID");
-                String divisionname = rs.getString("Division");
-                int countryid = rs.getInt("Country_ID");
-                Division d = new Division(divisionid, divisionname, countryid);
-                dlist.add(d);
-                return dlist;
-            }
-        }
-        catch (SQLException throwables){
-            throwables.printStackTrace();
-        }
-
-        return dlist;
-    }*/
-        return fdlist;
-    }
-
+    /** This function grabs divisions that share the same country id as the US in the countries table.
+     *
+     * @return
+     */
     public static ObservableList<Division> GetUS() {
         ObservableList<Division> uslist = FXCollections.observableArrayList();
         try {
@@ -99,6 +69,10 @@ public class DBDivision {
         return uslist;
     }
 
+    /** This function grabs divisions that share the same country id as the UK in the countries table.
+     *
+     * @return
+     */
     public static ObservableList <Division> GetUK() {
         ObservableList<Division> UKlist = FXCollections.observableArrayList();
 
@@ -122,6 +96,10 @@ public class DBDivision {
         return UKlist;
     }
 
+    /** This function grabs divisions that share the same country id as Canada in the countries table.
+     *
+     * @return
+     */
     public static ObservableList<Division> GetCanada () {
         ObservableList<Division> canlist = FXCollections.observableArrayList();
         try {

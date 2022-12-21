@@ -10,8 +10,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/** This class handles all of the interactions between the contacts table in the database, and the program.*/
 public class DBContact {
 
+    /** This function grabs all of the contacts from the SQL database.
+     *
+     * @return
+     */
     public static ObservableList<Contacts> getAllContacts(){
 
         ObservableList<Contacts> Conlist = FXCollections.observableArrayList();

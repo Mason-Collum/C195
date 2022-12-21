@@ -1,5 +1,6 @@
 package com.example.c195.Controller;
 
+import com.example.c195.DBaccess.DBAppointments;
 import com.example.c195.DBaccess.DBCustomer;
 import com.example.c195.DBaccess.DBDivision;
 import com.example.c195.Model.Customer;
@@ -21,20 +22,51 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainScreenController implements Initializable {
+
+    /** This represents the customer chosen for modification.*/
     private static Customer modifycustomer;
+
+    /** This represents the customer table view.*/
     public TableView CustomerInfo;
+
+    /** This represents the Customer ID column of the customer table view.*/
     public TableColumn CustomerID;
+
+    /** This represents the customer name column of the customer table view.*/
     public TableColumn CustomerName;
+
+    /** This represents the customer Address column of the customer table view.*/
     public TableColumn CustomerAddress;
+
+    /** This represents the customer country column of the customer table view.*/
     public TableColumn Country;
+
+    /** This represents the customer postal code column of the customer table view.*/
     public TableColumn PostalCode;
+
+    /** This represents the customer division column of the customer table view.*/
     public TableColumn FirstLevelDivison;
+
+    /** This represents the customer phone number column of the customer table view.*/
     public TableColumn Phone;
+
+    /** This button redirects to the appointment page.*/
     public Button ToAppointment;
+
+    /** This button redirects to the add customer page.*/
     public Button ToAddCustomer;
+
+    /** This button redirects to the modify customer page.*/
     public Button ToModifyCustomer;
+
+    /** This button deletes selected customer.*/
     public Button DeleteCustomer;
 
+    /** This function redirects the user to the add customer screen.
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     public void OnAddCustomer(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(MainScreenController.class.getResource("/com/example/C195/view/AddCustomer.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -44,6 +76,11 @@ public class MainScreenController implements Initializable {
         stage.show();
     }
 
+    /** This function redirects to the Appointments screen.
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     public void OnCustomerAppointments(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(MainScreenController.class.getResource("/com/example/C195/view/Appointments.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -53,6 +90,11 @@ public class MainScreenController implements Initializable {
         stage.show();
     }
 
+    /** This function redirects to the modify customer screen.
+     * It also transfers the selected customers information to the modify customer screen.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void OnModifyCustomer(ActionEvent actionEvent) throws IOException {
         modifycustomer = (Customer) CustomerInfo.getSelectionModel().getSelectedItem();
         ModifyCustomerController.passCustomerdata(modifycustomer);
@@ -72,6 +114,13 @@ public class MainScreenController implements Initializable {
         }
     }
 
+    /** This function deletes the selected Customer.
+     * It first confirms whether that customer is deleted, and then if so, it deletes said customer.
+     * It throws a warning when a customer is listed in appointments, and will not allow them to be deleted.
+     * @param actionEvent
+     * @throws SQLException
+     * @throws IOException
+     */
     public void OnDeleteCustomer(ActionEvent actionEvent) throws SQLException, IOException {
         Alert popup = new Alert(Alert.AlertType.CONFIRMATION, "Do you wish to delete?");
         Optional<ButtonType> confirm = popup.showAndWait();
@@ -79,7 +128,7 @@ public class MainScreenController implements Initializable {
         Customer chosen = (Customer) CustomerInfo.getSelectionModel().getSelectedItem();
 
         if (confirm.isPresent() && confirm.get() == ButtonType.OK) {
-
+            DBAppointments.deleteFromCustomer(chosen.getId());
             DBCustomer.deleteCustomer(chosen.getId());
             FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("/com/example/C195/view/MainScreen.fxml"));
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -91,6 +140,11 @@ public class MainScreenController implements Initializable {
         }
     }
 
+    /** This function initializes the main screen.
+     * It populates the Customer tableview.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -107,5 +161,34 @@ public class MainScreenController implements Initializable {
 
 
 
+    }
+    
+    
+
+    public void onReport2(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("/com/example/C195/view/ContactReport.fxml"));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(), 715, 700);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void onReport1(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("/com/example/C195/view/CustomerAppointmentsReport.fxml"));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(), 715, 700);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void onReport3(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("/com/example/C195/view/Report3.fxml"));
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(), 800, 700);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
     }
 }

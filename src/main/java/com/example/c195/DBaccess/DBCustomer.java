@@ -9,8 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/** This class handles all of the interaction between the Customers table in the database and the program.*/
 public class DBCustomer {
 
+    /** This function grabs all of the customer information from the database, and puts it into an observable list.
+     *
+     * @return
+     */
     public static ObservableList<Customer> getAllCustomers(){
 
         ObservableList<Customer> Clist = FXCollections.observableArrayList();
@@ -40,6 +45,17 @@ public class DBCustomer {
         return Clist;
     }
 
+    /** This function instructs the database to add a customer into the database.
+     *
+     * @param custid
+     * @param custname
+     * @param address
+     * @param postalcode
+     * @param phone
+     * @param divId
+     * @return
+     * @throws SQLException
+     */
     public static int addCustomer(int custid, String custname, String address, String postalcode, String phone, int divId) throws SQLException {
         String sql = "INSERT INTO customers (Customer_ID, Customer_Name, Address, Postal_Code, Phone, Division_ID) VALUES(?, ?, ?, ?, ?, ?)";
         PreparedStatement ps = JDBC.connection.prepareStatement(sql);
@@ -55,6 +71,16 @@ public class DBCustomer {
 
     }
 
+    /** This funtion instructs the database to modify a selected customer in the database.
+     *
+     * @param custid
+     * @param custname
+     * @param address
+     * @param postalcode
+     * @param phone
+     * @param divID
+     * @throws SQLException
+     */
     public static void modifyCustomer(int custid, String custname, String address, String postalcode, String phone, int divID) throws SQLException{
         String sql = "UPDATE customers SET Customer_Name = ?, Address = ?, Postal_Code = ?, Phone = ?, Division_ID = ? WHERE Customer_ID = ?";
         PreparedStatement ps = JDBC.connection.prepareStatement(sql);
@@ -69,6 +95,12 @@ public class DBCustomer {
 
     }
 
+    /** This funtion instructs the database to delete a selected customer.
+     *
+     * @param custid
+     * @return
+     * @throws SQLException
+     */
     public static int deleteCustomer(int custid) throws SQLException{
         String sql = "DELETE FROM customers WHERE Customer_ID = ?";
         PreparedStatement ps = JDBC.connection.prepareStatement(sql);
@@ -76,6 +108,8 @@ public class DBCustomer {
         int rowsaffected = ps.executeUpdate();
         return rowsaffected;
     }
+
+
 
 
 

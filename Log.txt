@@ -1,0 +1,6 @@
+Dec 19, 2022 7:35:32 PM com.example.c195.Controller.LoginController OnSubmit
+INFO: User Log in attempt successful.
+Dec 19, 2022 7:35:32 PM com.example.c195.Controller.LoginController OnSubmit
+WARNING: Unknown user! Unsuccessful Log in attempt
+Dec 19, 2022 7:36:21 PM com.example.c195.Controller.LoginController OnSubmit
+INFO: User Log in attempt successful.

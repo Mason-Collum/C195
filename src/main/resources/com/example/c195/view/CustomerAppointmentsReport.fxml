@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="505.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.Controller.CustomerAppointmentsReportController">
+   <children>
+      <Label layoutX="164.0" layoutY="192.0" text="Number of Appointments:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="textArea" layoutX="366.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onButtonPress" text="to Main Screen" />
+      <ComboBox fx:id="TypeBox" layoutX="14.0" layoutY="80.0" onAction="#onTypeSelect" prefWidth="150.0" promptText="Choose Type" />
+      <ComboBox fx:id="MonthBox" layoutX="14.0" layoutY="135.0" onAction="#onMonthSelect" prefWidth="150.0" promptText="Choose Month" />
+      <Button layoutX="47.0" layoutY="189.0" mnemonicParsing="false" onAction="#onGetTotal" text="Get Total" />
+   </children>
+</AnchorPane>

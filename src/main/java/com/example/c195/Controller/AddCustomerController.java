@@ -27,16 +27,36 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class AddCustomerController implements Initializable {
+
+    /** This text field is where the customer id is generated.*/
     public TextField CustID;
+
+    /** This text field is where the customer name is entered.*/
     public TextField CustName;
+
+    /** This text field is where the customer address is entered.*/
     public TextField CustAddress;
+
+    /** This text field is where the customer postal code is entered.*/
     public TextField CustPostalCode;
+
+    /** This text field is where the customer phone number is entered.*/
     public TextField CustPhone;
+
+    /** This combo box is where the customer country is chosen.*/
     public ComboBox<Country> CountryBox;
+
+    /** This combo box is where the customer division is chosen.
+     * It's options change based on the country chosen.
+     */
     public ComboBox<Division> FLDBox;
 
 
-
+    /** This function saves the customer information.
+     * This information is then transferred to the customer info table and the scene is changed back to the main screen.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void OnSave(ActionEvent actionEvent) throws IOException{
        try{
             String custname = CustName.getText();
@@ -76,7 +96,11 @@ public class AddCustomerController implements Initializable {
 
     }
 
-
+    /** This function cancels any information entered into the fields.
+     * It then redirects to the main page.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void OnCancel (ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(AddCustomerController.class.getResource("/com/example/C195/view/MainScreen.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -86,6 +110,11 @@ public class AddCustomerController implements Initializable {
         stage.show();
     }
 
+    /** This function initializes the add customer page.
+     * It sets both combo boxes.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         CountryBox.setItems(DBCountry.getAllCountry());
@@ -98,10 +127,10 @@ public class AddCustomerController implements Initializable {
 
 
 
-
-    public void OnFLDSelect(ActionEvent actionEvent) {
-    }
-
+    /** This function changes the option in the division combo box base on the country selected.
+     *
+     * @param actionEvent
+     */
     public void OnCountrySelect(ActionEvent actionEvent) throws SQLException {
         if(CountryBox.getSelectionModel().getSelectedItem().getCountryid() == 1){
             FLDBox.setItems(DBDivision.GetUS());
@@ -118,4 +147,6 @@ public class AddCustomerController implements Initializable {
        }
 
 
+    public void OnFLDSelect(ActionEvent actionEvent) {
+    }
 }

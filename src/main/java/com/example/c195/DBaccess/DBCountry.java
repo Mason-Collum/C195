@@ -10,8 +10,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/** This class handles all of the interactions between the country table in the database, and the program.*/
 public class DBCountry {
 
+    /** This funtion grabs all of the countries from the database and puts them in an observable list.
+     *
+     * @return
+     */
     public static ObservableList<Country> getAllCountry(){
 
         ObservableList<Country> Colist = FXCollections.observableArrayList();
@@ -36,43 +41,5 @@ public class DBCountry {
         return Colist;
     }
 
-    public static Country GetCountryID(String countryname) throws SQLException {
-        String sql = "SELECT * FROM countries WHERE Country = ?";
-        try {
 
-
-            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
-
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                int countryid = rs.getInt("Country_ID");
-                String country = rs.getString("Country");
-                Country co = new Country(countryid, country);
-
-                return co;
-            }
-        }
-        catch (SQLException throwables){
-            throwables.printStackTrace();
-        }
-
-        return null;
-    }
-
-    public static ObservableList<String> getCountryName(){
-        ObservableList<String> CoNamelist = FXCollections.observableArrayList();
-        try {
-            String sql = "SELECT Country FROM countries";
-            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()){
-                String countryname = rs.getString("Country");
-                CoNamelist.add(countryname);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return CoNamelist;
-    }
 }

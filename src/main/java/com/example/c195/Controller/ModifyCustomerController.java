@@ -22,19 +22,44 @@ import java.util.ResourceBundle;
 
 public class ModifyCustomerController implements Initializable {
 
+    /** This object represents the customer selected for modification.*/
     private static Customer chosen = null;
+
+    /** This text field is where the modification is made to the customer ID.*/
     public TextField ModifyCustID;
+
+    /** This text field is where the modification is made to the customer name.*/
     public TextField ModifyCustName;
+
+    /** This text field is where the modification is made to the customer address.*/
     public TextField ModifyCustAddress;
+
+    /** This text field is where the modification is made to the customer postal code.*/
     public TextField ModifyPostalCode;
+
+    /** This text field is where the modification is made to the customer phone number.*/
     public TextField ModifyCustPhone;
+
+    /** This combo box holds all of the available Divisions options.
+     * The options will change depending on which country is selected.
+     */
     public ComboBox<Division> FLDBox;
+
+    /** This combo box holds all of the available country options.*/
     public ComboBox<Country> CountryBox;
 
+    /** This function passes customer data from the table view.
+     * The customer that was selected is set to chosen, and chosen is initialized.
+     * @param customer
+     */
     public static void passCustomerdata(Customer customer){
         chosen = customer;
     }
 
+    /** This function saves the changes made to the customer.
+     * It then redirects to the main screen.
+     * @param actionEvent
+     */
     public void OnSaveModify(ActionEvent actionEvent) {
         try{
             String custname = ModifyCustName.getText();
@@ -74,6 +99,11 @@ public class ModifyCustomerController implements Initializable {
 
     }
 
+    /** This function cancels the changes made to the customer.
+     * It then redirects to the main screen.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void OnCancelModify(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(ModifyCustomerController.class.getResource("/com/example/C195/view/MainScreen.fxml"));
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -83,6 +113,10 @@ public class ModifyCustomerController implements Initializable {
         stage.show();
     }
 
+    /** This function populates the Division box based off the country selected.
+     *
+     * @param actionEvent
+     */
     public void OnSelectCountry(ActionEvent actionEvent) {
         if (CountryBox.getSelectionModel().getSelectedItem().getCountryid() == 1) {
             FLDBox.setItems(DBDivision.GetUS());
@@ -94,6 +128,11 @@ public class ModifyCustomerController implements Initializable {
         }
     }
 
+    /** This function initializes the modify customer screen.
+     *
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ModifyCustID.setText(String.valueOf(chosen.getId()));
